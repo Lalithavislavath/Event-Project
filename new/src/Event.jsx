@@ -21,9 +21,14 @@ function Event() {
           remainingSpots: 3,
         },
       ]);
+
+      const [registeredEvents, setRegisteredEvents] = useState([]);
+      const [filters, setFilters] = useState({ category: "", location: "", date: "" });
+
   return (
     <div>
       <h1>Event Management System</h1>
+
 
 
       <div className="filter-container">
@@ -34,9 +39,26 @@ function Event() {
         <option value="Workshop">Workshop</option>
         <option value="Conference">Conference</option>
         </select>
-
-
 </div>
+
+<input
+          type="text"
+          className="filter-input"
+          placeholder="Filter by location, category"
+          onChange={(e) => setFilters({ ...filters, location: e.target.value })}
+        />
+ 
+        <input
+          type="date"
+          className="filter-input"
+          onChange={(e) => setFilters({ ...filters, date: e.target.value })}
+        />
+
+
+
+
+
+
     </div>
   )
 }
