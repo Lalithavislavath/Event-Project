@@ -24,6 +24,19 @@ function Event() {
   return (
     <div>
       <h1>Event Management System</h1>
+
+
+      <div className="filter-container">
+        <select
+          className="filter-input"
+          onChange={(e) => setFilters({ ...filters, category: e.target.value })} >
+         <option value="">All Categories</option>
+        <option value="Workshop">Workshop</option>
+        <option value="Conference">Conference</option>
+        </select>
+
+
+</div>
     </div>
   )
 }
